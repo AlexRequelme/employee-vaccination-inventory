@@ -1,0 +1,20 @@
+.section {
+    @apply flex flex-col gap-2;
+
+    &-title {
+        @apply font-semibold text-gray-500 uppercase;
+    }
+
+    & > label {
+        @apply flex items-center gap-2 cursor-pointer;
+    }
+
+    &-input-date {
+        @apply bg-gray-50 border border-gray-200 rounded-md px-4 py-2 w-4/5;
+    }
+}
+
+.container-max-height {
+    height: 580px;
+    max-height: 580px;
+}
