@@ -2,22 +2,70 @@ function EmployeeView() {
     return (
         <div className="flex flex-col gap-2">
             <p>Como empleado puedes visualizar y actualizar tu información.</p>
-            <div className="bg-white rounded-md border p-8">
-                <form className="flex flex-col gap-5 text-gray-700">
-                    <input
-                        placeholder="Fecha de nacimiento"
-                        className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
-                    />
-                    <input
-                        placeholder="Dirección de domicilio"
-                        className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
-                    />
-                    <input
-                        placeholder="Teléfono móvil"
-                        className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
-                    />
-                    <div className="flex flex-col">
-                        <span>¿Estas vacunado?</span>
+            <div className="bg-white rounded-md border p-4 lg:p-8">
+                <form className="flex flex-col gap-5 text-gray-600">
+                    <div className="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-between lg:items-center">
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Cédula
+                            <input
+                                placeholder="Cédula"
+                                disabled
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Nombres
+                            <input
+                                placeholder="Nombres"
+                                disabled
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                    </div>
+                    <div className="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-between lg:items-center">
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Apellidos
+                            <input
+                                placeholder="Apellidos"
+                                disabled
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Correo electrónico
+                            <input
+                                placeholder="Correo electrónico"
+                                disabled
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                    </div>
+                    <div className="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-between lg:items-center">
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Fecha de nacimiento
+                            <input
+                                placeholder="Fecha de nacimiento"
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Dirección de domicilio
+                            <input
+                                placeholder="Dirección de domicilio"
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Teléfono móvil
+                            <input
+                                placeholder="Teléfono móvil"
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                    </div>
+
+                    <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
+                        <span className="font-semibold">¿Estas vacunado?</span>
                         <label>
                             <input
                                 className="mr-2"
@@ -37,8 +85,9 @@ function EmployeeView() {
                             No
                         </label>
                     </div>
-                    <div className="flex flex-col">
-                        <span>Tipo de vacuna</span>
+
+                    <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
+                        <span className="font-semibold">Tipo de vacuna</span>
                         {[
                             "Sputnik",
                             "AstraZeneca",
@@ -56,19 +105,28 @@ function EmployeeView() {
                             </label>
                         ))}
                     </div>
-                    <input
-                        placeholder="Fecha de vacunación"
-                        className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
-                    />
-                    <input
-                        placeholder="Número de dosis"
-                        className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
-                    />
+                    <div className="flex flex-col gap-4 lg:flex-row lg:gap-8 justify-between lg:items-center">
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Fecha de vacunación
+                            <input
+                                placeholder="Fecha de vacunación"
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                        <label className="flex-1 flex flex-col font-semibold gap-2">
+                            Número de dosis
+                            <input
+                                placeholder="Número de dosis"
+                                className="bg-gray-50 border border-gray-200 rounded-md px-4 py-2"
+                            />
+                        </label>
+                    </div>
+
                     <button
                         type="submit"
-                        className="bg-kc-orange-light hover:bg-kc-orange-dark text-white rounded-md px-4 py-2 font-medium"
+                        className="self-end bg-kc-orange-light hover:bg-kc-orange-dark text-white rounded-md px-4 py-2 font-medium"
                     >
-                        Ingresar
+                        Actualizar información
                     </button>
                 </form>
             </div>

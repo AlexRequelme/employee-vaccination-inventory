@@ -19,7 +19,7 @@ function useProvideAuth() {
         name: "Alexander",
         surname: "Requelme",
         email: "alexander.requelme",
-        isAdmin: false,
+        isAdmin: true,
     };
 
     const signIn = async (payload) => {

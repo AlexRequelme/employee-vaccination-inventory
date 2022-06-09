@@ -16,8 +16,8 @@ type EmployeeCardProps = {
 
 function EmployeeCard(props: EmployeeCardProps) {
     return (
-        <div className="bg-white p-4 rounded-md border flex justify-between items-center">
-            <div className="w-2/5 flex flex-col gap-2">
+        <div className="bg-white p-4 rounded-md border flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between items-center">
+            <div className="w-full lg:w-2/5 flex flex-col gap-2">
                 <div className="flex items-center gap-2 ">
                     <PersonIcon />
                     <span className="truncate">{props.employee}</span>
@@ -27,7 +27,7 @@ function EmployeeCard(props: EmployeeCardProps) {
                     <span>{props.vaccinationState}</span>
                 </div>
             </div>
-            <div className="w-2/5 flex flex-col gap-2">
+            <div className="w-full lg:w-2/5 flex flex-col gap-2">
                 <div className="flex items-center gap-2">
                     <VaccinesIcon />
                     <span>{props.vaccinationType || "-"}</span>
@@ -37,7 +37,7 @@ function EmployeeCard(props: EmployeeCardProps) {
                     <span>{props.vaccinationDate || "-"}</span>
                 </div>
             </div>
-            <div className="w-1/5 flex flex-col gap-2">
+            <div className="w-full lg:w-1/5 flex lg:flex-col justify-between gap-2">
                 <button
                     type="button"
                     className="flex items-center gap-2 text-blue-600 font-semibold"
