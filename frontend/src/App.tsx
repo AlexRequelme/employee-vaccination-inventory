@@ -7,12 +7,23 @@ import PrivateRoute from "./containers/PrivateRoute";
 import { useAuth } from "./hooks/useAuth";
 import AuthLayout from "./routes/AuthLayout";
 import HomeLayout from "./routes/HomeLayout";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+    typography: {
+        allVariants: {
+            fontFamily: "Rubik",
+            textTransform: "none",
+            fontSize: 16,
+        },
+    },
+});
 
 function App() {
     const { user } = useAuth();
 
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <Routes>
                 <Route
                     path="home/*"
@@ -37,7 +48,7 @@ function App() {
                     />
                 )}
             </Toaster>
-        </>
+        </ThemeProvider>
     );
 }
 

@@ -15,7 +15,7 @@ function LoginForm() {
             />
             <button
                 type="submit"
-                className="bg-kc-orange-light hover:bg-kc-blue text-white rounded-md px-4 py-2 self-end font-medium"
+                className="bg-kc-orange-light hover:bg-kc-orange-dark text-white rounded-md px-4 py-2 font-medium"
             >
                 Ingresar
             </button>

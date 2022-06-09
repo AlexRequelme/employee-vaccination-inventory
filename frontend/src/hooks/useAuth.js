@@ -13,7 +13,14 @@ export const useAuth = () => {
 };
 
 function useProvideAuth() {
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+    //const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+    const user = {
+        id: "0334233128",
+        name: "Alexander",
+        surname: "Requelme",
+        email: "alexander.requelme",
+        isAdmin: false,
+    };
 
     const signIn = async (payload) => {
         //code to signIn
@@ -21,6 +28,7 @@ function useProvideAuth() {
 
     const signOut = () => {
         //code to signOut
+        console.log("Signout ....");
     };
 
     const updateUserData = (data) => {
