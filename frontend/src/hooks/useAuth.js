@@ -13,26 +13,22 @@ export const useAuth = () => {
 };
 
 function useProvideAuth() {
-    //const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
-    const user = {
-        id: "0334233128",
-        name: "Alexander",
-        surname: "Requelme",
-        email: "alexander.requelme",
-        isAdmin: true,
-    };
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
     const signIn = async (payload) => {
-        //code to signIn
+        const data = await API.post("/auth/login", payload);
+        if (data) updateUserData(data);
     };
 
     const signOut = () => {
-        //code to signOut
-        console.log("Signout ....");
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("user");
+        setUser(null);
     };
 
-    const updateUserData = (data) => {
-        //code to updateData
+    const updateUserData = (userData) => {
+        localStorage.setItem("user", JSON.stringify(userData));
+        setUser(userData);
     };
 
     return {

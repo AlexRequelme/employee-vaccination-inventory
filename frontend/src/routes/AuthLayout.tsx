@@ -1,8 +1,14 @@
+import { Navigate } from "react-router-dom";
 import Banner from "../components/Banner";
 import LoginForm from "../containers/LoginForm";
+import { useAuth } from "../hooks/useAuth";
 import styles from "../styles/AuthLayout.module.scss";
 
 function AuthLayout() {
+    const { user } = useAuth();
+
+    if (user) return <Navigate to="/home" />;
+
     return (
         <div className="w-full h-full flex flex-col lg:flex-row">
             <Banner

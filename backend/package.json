@@ -3,14 +3,38 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "type": "module",
     "scripts": {
-        "start": "json-server --watch db.json",
+        "start": "node dist/index.js",
+        "dev": "nodemon --exec babel-node src/index.js --ignore db.json",
+        "build": "babel src -d dist",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.17.10",
+        "@babel/core": "^7.18.2",
+        "@babel/node": "^7.17.10",
+        "@babel/preset-env": "^7.18.2",
+        "eslint": "^8.17.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "nodemon": "^2.0.16",
+        "prettier": "^2.6.2"
+    },
     "dependencies": {
-        "json-server": "^0.17.0"
+        "cors": "^2.8.5",
+        "express": "^4.18.1",
+        "express-rate-limit": "^6.4.0",
+        "helmet": "^5.1.0",
+        "lowdb": "^3.0.0",
+        "mongodb": "^4.6.0",
+        "mongoose": "^6.3.5",
+        "mongoose-data-seed": "^2.1.6",
+        "morgan": "^1.10.0",
+        "uuid": "^8.3.2"
     }
 }

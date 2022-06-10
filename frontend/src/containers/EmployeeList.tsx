@@ -1,21 +1,29 @@
 import EmployeeCard from "../components/EmployeeCard";
+import User from "../types/user";
 import FilterBar from "./FilterBar";
 
 type EmployeeListProps = {
-    employees: any[];
+    employees: User[] | undefined;
     handleDelete: any;
     handleEdit: any;
+    filterEmployee: any;
+    resetFilters: any;
 };
 
 function EmployeeList({
     employees,
     handleDelete,
     handleEdit,
+    filterEmployee,
+    resetFilters,
 }: EmployeeListProps) {
     return (
         <div className={`flex gap-2 flex-col lg:flex-row `}>
             <div className="w-80 h-max hidden lg:block sticky top-2 bg-white p-8 border rounded">
-                <FilterBar />
+                <FilterBar
+                    filterEmployee={filterEmployee}
+                    resetFilters={resetFilters}
+                />
             </div>
 
             <div className="flex-1 bg-white p-4 lg:p-8 border rounded text-base flex flex-col gap-4 overflow-auto">
@@ -27,8 +35,8 @@ function EmployeeList({
                             <EmployeeCard
                                 key={index}
                                 {...emp}
-                                handleDelete={handleDelete}
-                                handleEdit={handleEdit}
+                                handleDelete={handleDelete("confirm", emp)}
+                                handleEdit={handleEdit("form", emp)}
                             />
                         ))
                     ) : (

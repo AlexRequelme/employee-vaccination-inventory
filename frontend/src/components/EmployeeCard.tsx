@@ -6,10 +6,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 type EmployeeCardProps = {
-    employee: string;
-    vaccinationState: string;
-    vaccinationType: string;
-    vaccinationDate: string;
+    name: string;
+    surname: string;
+    isVaccination?: string;
+    vaccinationType?: string;
+    vaccinationDate?: string;
     handleDelete: any;
     handleEdit: any;
 };
@@ -20,11 +21,13 @@ function EmployeeCard(props: EmployeeCardProps) {
             <div className="w-full lg:w-2/5 flex flex-col gap-2">
                 <div className="flex items-center gap-2 ">
                     <PersonIcon />
-                    <span className="truncate">{props.employee}</span>
+                    <span className="truncate">{`${props.name.split(" ")[0]} ${
+                        props.surname.split(" ")[0]
+                    }`}</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <MedicalInformationIcon />
-                    <span>{props.vaccinationState}</span>
+                    <span>{props.isVaccination || "-"}</span>
                 </div>
             </div>
             <div className="w-full lg:w-2/5 flex flex-col gap-2">

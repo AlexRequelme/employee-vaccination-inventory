@@ -1,17 +1,15 @@
 import {
     Dialog,
-    DialogTitle,
     DialogContent,
     DialogContentText,
-    DialogActions,
-    Button,
+    DialogTitle,
 } from "@mui/material";
 
 type ConfirmationModalProps = {
     open: boolean;
     title: string;
     description: string;
-    handleClose: any;
+    handleClose?: any;
     handleConfirm: any;
 };
 
@@ -34,13 +32,26 @@ function ConfirmationModal({
                 <DialogContentText id="alert-dialog-description">
                     {description}
                 </DialogContentText>
+
+                <div className="mt-4 flex gap-2 items-center justify-end">
+                    {handleClose && (
+                        <button
+                            type="button"
+                            onClick={handleClose}
+                            className="bg-gray-400 hover:bg-gray-500 text-white rounded-md px-4 py-2 font-medium"
+                        >
+                            Cancelar
+                        </button>
+                    )}
+                    <button
+                        type="button"
+                        onClick={handleConfirm}
+                        className=" bg-kc-orange-light hover:bg-kc-orange-dark text-white rounded-md px-4 py-2 font-medium"
+                    >
+                        Continuar
+                    </button>
+                </div>
             </DialogContent>
-            <DialogActions>
-                <Button onClick={handleClose}>Cancelar</Button>
-                <Button onClick={handleConfirm} autoFocus>
-                    Continuar
-                </Button>
-            </DialogActions>
         </Dialog>
     );
 }
