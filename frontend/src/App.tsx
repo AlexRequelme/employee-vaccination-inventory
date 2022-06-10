@@ -1,7 +1,6 @@
 import React from "react";
 import { resolveValue, Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
-import "./App.scss";
 import Alert from "./components/Alert";
 import PrivateRoute from "./containers/PrivateRoute";
 import { useAuth } from "./hooks/useAuth";

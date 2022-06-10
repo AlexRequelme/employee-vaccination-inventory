@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosRequestConfig } from "axios";
 import toast from "react-hot-toast";
 
 const instance = axios.create({
-    baseURL: "http://localhost:5000/", //backend port
+    baseURL: "http://localhost:5000/api/", //backend port
     withCredentials: false,
 });
 
@@ -21,9 +21,12 @@ instance.interceptors.request.use(
 class API {
     private static manageError(err: AxiosError) {
         if (err.response && err instanceof AxiosError) {
-            toast.error(err.response.data.message);
+            toast.error(err.response.data.message || "A error occurred");
         } else {
             console.error(err.message);
+            toast.error(
+                "A network error occurred, this could be a CORS issue or a dropped internet connection. "
+            );
         }
     }
 
@@ -39,6 +42,15 @@ class API {
     static async post(url: string, payload: any) {
         try {
             const response = await instance.post(url, payload);
+            return response.data;
+        } catch (err: any) {
+            this.manageError(err);
+        }
+    }
+
+    static async patch(url: string, payload: any) {
+        try {
+            const response = await instance.patch(url, payload);
             return response.data;
         } catch (err: any) {
             this.manageError(err);
