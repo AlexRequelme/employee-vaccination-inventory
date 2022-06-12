@@ -10,6 +10,10 @@ docker-compose up
 
 The react application will run on port 3000.
 
+The credentials for the admin account are:
+- username: admin
+- password: admin
+
 ## Preview
 
 <img style="height:50%" src="https://user-images.githubusercontent.com/77654365/173134382-aa64b7ed-6c24-48f4-8e11-c01b66f7bc1b.png" />
